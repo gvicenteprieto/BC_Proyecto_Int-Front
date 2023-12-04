@@ -1,0 +1,17 @@
+.bannerSlides {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    animation: slide 1s ease-in-out infinite;
+}
+
+.Link {
+    text-decoration: none;
+    color: white;
+}

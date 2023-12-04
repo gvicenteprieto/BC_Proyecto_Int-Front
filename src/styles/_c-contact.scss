@@ -1,0 +1,125 @@
+@use "./_h-fonts" as F;
+@use "./_h-colors" as C;
+@use "./_h-breakPoints" as BP;
+
+.main__contact {
+    // background-color: C.$c-brand-bg;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    padding-top: 25px;
+
+    .success-message {
+        display: flex;
+        flex-direction: column;
+        color: C.$c-success-msg;
+        font-size: 22px;
+        width: 70%;
+        text-align: center;
+
+        p {
+            font-size: 20px;
+            margin: 10px;
+        }
+    }
+
+    .form__contact {
+        background-color: C.$c-brand-bg;
+        margin: 0 20px 5rem 20px;
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        width: 70%;
+        text-align: left;
+        padding: 25px;
+        opacity: .75;
+
+        .label__contact {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 1%;
+            padding-left: 15px;
+            color: C.$c-brand-border;
+        }
+
+        .input__contact {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            height: 43px;
+            font-size: 18px;
+            border-radius: 3px;
+            // background-color: C.$c-brand-light;
+            background-color: C.$c-brand-hover;
+            border: none;
+            border-bottom: 2px solid C.$c-brand-hover-color;
+        }
+
+        .textarea__contact {
+            margin-bottom: 3%;
+            padding-left: 2%;
+            font-size: 18px;
+            background-color: C.$c-brand-hover;
+            border-radius: 3px;
+            border: 1px solid C.$c-brand-hover-color;
+        }
+
+        .button__contact {
+            margin-top: 3%;
+            height: 43px;
+            font-size: 18px;
+            border-radius: 5px;
+            background-color: C.$c-brand;
+            border: 1px solid C.$c-brand-hover-color;
+            color: C.$c-brand-border;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    .is-invalid {
+        border: 2px solid C.$c-invalid;
+        background-color: C.$c-invalid-bg;
+        color: C.$c-brand-black;
+    }
+
+    .is-valid {
+        border: 2px solid C.$c-isValid;
+        border-radius: 5px;
+        transform: scale(1.05);
+        font-weight: bold;
+        background-color: C.$c-isValid-bg;
+        color: C.$c-isValid;
+    }
+
+    .error-message {
+        display: flex;
+        flex-direction: row;
+        margin: 0px 0px 15px 0px;
+        color: C.$c-error-msg;
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 15px;
+    }
+
+    .success-message {
+        display: flex;
+        flex-direction: column;
+        color: C.$c-success-msg;
+        font-size: 15px;
+        width: 60%;
+        text-align: center;
+    }
+
+    #errors {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 0px 15px 0px;
+        color: C.$c-errors;
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 15px;
+        text-align: center;
+    }
+}

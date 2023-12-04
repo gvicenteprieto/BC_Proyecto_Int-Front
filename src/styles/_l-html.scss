@@ -1,0 +1,26 @@
+@use "./_h-fonts" as F;
+@use "./_h-colors" as C;
+@use "./_h-breakPoints" as BP;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  font-size: F.$fontSize;
+  font-family: F.$fontFamily;
+  font-weight: F.$fontWeight400;
+  line-height: F.$lineHeight;
+  text-align: center;
+}
+
+body {
+  height: auto;
+  margin: 0;
+  background-image: url('../../images/bg/bg__desktop-aut-jason-leung.jpg');
+  background-attachment: fixed;
+}

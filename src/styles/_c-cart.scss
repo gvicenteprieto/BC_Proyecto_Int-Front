@@ -1,0 +1,81 @@
+@use "./_h-fonts" as F;
+@use "./_h-colors" as C;
+@use "./_h-breakPoints" as BP;
+
+.main__cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+    padding-top: 25px;
+}
+
+.main__shops {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 800px;
+    padding-top: 25px;
+
+    #container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        .section__shops {
+            margin: 10px;
+            padding: 0 25px;
+            opacity: .75;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid C.$c-brand-border;
+            border-radius: 5px;
+            max-width: 300px;
+            min-height: 300px;
+            border-radius: 10px;
+            background-color: C.$c-brand-pink;
+
+            .article__shops {
+                background-color: C.$c-brand-pink;
+                width: 275px;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+
+                h5 {
+                    width: 30%;
+                    margin: 1rem;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: C.$c-brand-border;
+                    text-decoration: unset;
+                    text-align: center;
+                }
+
+                h6 {
+                    margin: 10px;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    color: C.$c-brand-black;
+                    text-decoration: overline;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: C.$c-brand-black;
+                }
+            }
+        }
+    }
+}

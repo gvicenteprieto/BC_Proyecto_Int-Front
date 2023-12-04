@@ -1,0 +1,59 @@
+.modal-button {
+    background-color: #918eba;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: auto;
+}
+
+.modal-button:hover {
+    background-color: #ec7a0f;
+    color: #ffffff;
+}
+
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    background-color: #269134;
+    color: white;
+    padding: 20px;
+  }
+  .modal-header button {
+    border: 2px solid white;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 30px 0;
+    border-bottom: 1px solid #918eba;
+    background-color: #ec7a0f;
+  }
+
+    .cart-item h4 {
+        width: 30px;
+    }
+
+    .cart-item p {
+        color: white;
+    }
+
+  

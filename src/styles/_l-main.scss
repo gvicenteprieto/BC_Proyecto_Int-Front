@@ -1,0 +1,36 @@
+@use "./_h-fonts" as F;
+@use "./_h-colors" as C;
+@use "./_h-breakPoints" as BP;
+@use "./_c-index";
+@use "./_c-about";
+@use "./_c-cart";
+@use "./_c-contact";
+@use "./_c-update";
+
+main {
+    h1 {
+        color: C.$c-brand-light;
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    h3 {
+        color: C.$c-brand-border;
+        font-size: 1.25rem;
+        padding-bottom: .5rem;
+    }
+
+    a {
+        color: C.$c-brand-link;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: C.$c-brand-hover-color;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease-in-out;
+    }
+}
