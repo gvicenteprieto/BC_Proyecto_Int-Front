@@ -6,6 +6,11 @@
 
 - [Guillermo Vicente](https://github.com/gvicenteprieto)
 
+### Repositories
+
+- [Front](https://github.com/gvicenteprieto/BC_Proyecto_Int-Front)
+- [Back](https://github.com/gvicenteprieto/BC_Proyecto_Int-Back)
+
 ### Deployment
 
 - [Front](https://bc-proyecto-int-front.netlify.app)
