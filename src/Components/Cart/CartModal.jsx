@@ -21,7 +21,7 @@ const customStyles = {
   },
 };
 const CartModal = ({ title, isOpen, setIsOpen }) => {
-  const { cart, setCart, clearCart, removeItem, totalItems, totalCart } = useContext(CartContext);
+  const { cart, setCart, clearCart, removeItem, totalItems, totalCart, buyCart } = useContext(CartContext);
 
  const handleCloseModal = () => {
     setIsOpen(!isOpen);
@@ -41,6 +41,7 @@ const CartModal = ({ title, isOpen, setIsOpen }) => {
             X
           </button>
         </div>
+        
       </div>
 
       <div className="cart-button-container">
@@ -49,13 +50,13 @@ const CartModal = ({ title, isOpen, setIsOpen }) => {
             {cart.length > 0 ? (
               <>
                 {cart.map((item) => (
-                  <div className="cart-item" key={item.id}>
+                  <div className="cart-item" key={item._id}>
                     <h4>{item.name}</h4>
                     <p>Precio: $ {item.price}</p>
                     <p>Cantidad: {item.quantity}</p>
                     <button
                       className="remove-button"
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => removeItem(item._id)}
                     >
                       <FaTrash /> Quitar
                     </button>
@@ -63,17 +64,26 @@ const CartModal = ({ title, isOpen, setIsOpen }) => {
                 ))}
                 <p className="cart-title">Total Productos: {totalItems()}</p>
                 <p className="cart-title">Total: $ {totalCart()}</p>
+               <div>
+                <button className="buy-button"  onClick={() => buyCart()}>Comprar</button>
+               </div>
                 <button className="clear-button" onClick={() => clearCart()}>
                   <FaRegTrashCan className="clear-button" />
                   Limpiar carrito
                 </button>
+                {/* comprar: */}
+                {/* <button className="buy-button"  onClick={() => buyCart()}>Comprar</button> */}
+
               </>
             ) : (
               <p>No hay productos en el carrito</p>
             )}
           </div>
         )}
+
+
       </div>
+
     </ReactModal>
   );
 };

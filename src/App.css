@@ -389,3 +389,15 @@
   color: #ff5e00;
   color: #000000;
 }
+
+.buy-button {
+  background-color: #2b8a2b;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}

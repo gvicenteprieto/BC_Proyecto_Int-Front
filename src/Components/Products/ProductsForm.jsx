@@ -91,7 +91,7 @@ const ProductsForm = () => {
     };
 
     if (updateProduct) {
-      editProduct(updateProduct.name, product);
+      editProduct(updateProduct._id, product);
       setValidationMessage(``);
     } else {
 

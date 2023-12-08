@@ -26,22 +26,23 @@ const ProductsList = () => {
                 <div>
                   <h4>Total de Productos registrados: {products.length}</h4>
                 </div>
+                
                 {
                   <>
-                    {listType === "" && <h3>Seleccione una vista</h3>}
+                    {listType === "" }
                     <div className="listType-buttons">
                       <button
                         value="table"
                         onClick={() => handleListType("table")}
                       >
-                        Vista Tabla
+                        Ver Tabla
                       </button>
-                      <button
+                      {/* <button
                         value="card"
                         onClick={() => handleListType("card")}
                       >
                         Vista Tarjetas
-                      </button>
+                      </button> */}
                     </div>
                   </>
                 }
@@ -53,7 +54,7 @@ const ProductsList = () => {
                     </div>
                   </>
                 )}
-                {listType === "card" && (
+                {/* {listType === "card" && (
                   <>
                     <h3>Tarjetas de Productos, por orden alfabético</h3>
                     <div className="ProductsCard">
@@ -64,7 +65,7 @@ const ProductsList = () => {
                       ))}
                     </div>
                   </>
-                )}
+                )} */}
               </section>
             )}
           </div>

@@ -33,14 +33,14 @@ const ProductProvider = ({ children }) => {
   const [photo, setPhoto] = useState("");
 
 
-  const urlData = import.meta.env.VITE_BACK_URL // import.meta.env.VITE_MOCKAPI_URL
+  const urlData = import.meta.env.VITE_BACK_URL  // import.meta.env.VITE_MOCKAPI_URL
 
   const fetchProducts = async () => {
     setLoading(false);
-    const response = await fetch(urlData);
+    const response = await fetch(urlData+ '/products');
 
     const data = await response.json();
-    //console.log(data)
+
     if (data) {
       setProducts(data.sort((a, b) => a.name.localeCompare(b.name)));
       setLoading(true);
@@ -267,18 +267,18 @@ const ProductProvider = ({ children }) => {
 
   const deleteProduct = async (name) => {
     setErrorLoad(false);
-    const productsData = await fetch(urlData);
+    const productsData = await fetch(urlData+'/products');
     const productsDataJson = await productsData.json();
     const productDelete = productsDataJson
       .map((doc) => ({ name: doc.name }))
       .filter((doc) => doc.name === name);
 
     const productsFetch = async () => {
-      const response = await fetch(urlData);
+      const response = await fetch(urlData+'/products');
       const data = await response.json();
       data.forEach((doc) => {
         if (doc.name === productDelete[0].name) {
-          fetch(urlData + "/" + doc.id, {
+          fetch(urlData + "/product/" + doc._id, {
             method: "DELETE",
           });
         }
@@ -291,27 +291,29 @@ const ProductProvider = ({ children }) => {
     }, 250);
   };
 
-  const editProduct = async (name, product) => {
-    const productsData = await fetch(urlData);
+  const editProduct = async (id, product) => {
+    const productsData = await fetch(urlData+'/products');
     const productsDataJson = await productsData.json();
     const productEdit = productsDataJson
       .map((doc) => ({ name: doc.name }))
       .filter((doc) => doc.name === name);
 
     const productsFetch = async () => {
-      const response = await fetch(urlData);
+      const response = await fetch(urlData+'/product/' + id,
+        {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(product),
+        });
       const data = await response.json();
-      data.forEach((doc) => {
-        if (doc.name === productEdit[0].name) {
-          fetch(urlData + "/" + doc.id, {
-            method: "PUT",
-            headers: {
-              "Content-type": "application/json",
-            },
-            body: JSON.stringify(product),
-          });
-        }
-      });
+      setProducts(
+        products.map((product) => (product._id === data._id ? data : product))
+      );
+
+
+
     };
 
     productsFetch();
@@ -321,7 +323,6 @@ const ProductProvider = ({ children }) => {
       fetchProducts();
     }, 250);
   };
-
   useEffect(() => {
     fetchProducts();
   }, []);

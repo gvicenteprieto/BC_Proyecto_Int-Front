@@ -9,7 +9,7 @@ const ProductsCard = ({ product, sale }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <main className="main__index">
+    <main >
     <section className="category">
       <section className="section__products">
         <article >
